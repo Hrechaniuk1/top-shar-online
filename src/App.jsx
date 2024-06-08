@@ -14,7 +14,6 @@ export default function App() {
 
   const location = useLocation()
 
-
   return (
     <div>
       {location.pathname === '/' ? <HomeHead></HomeHead> : <></>}

@@ -1,6 +1,6 @@
-import telegram from '../../images/socialMedia/telegram.png'
-import viber from '../../images/socialMedia/viber.png'
-import insta from '../../images/socialMedia/insta.png'
+import telegram from '../../../public/images/socialMedia/telegram.png'
+import viber from '../../../public/images/socialMedia/viber.png'
+import insta from '../../../public/images/socialMedia/insta.png'
 
 import css from './Footer.module.css'
 
