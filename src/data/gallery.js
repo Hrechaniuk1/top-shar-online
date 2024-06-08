@@ -1,5 +1,5 @@
 const gallery = [
-    { img: '/src/images/gallery/013730AF-6DD7-4135-838B-A32866678E67.jpeg', id: '1g'},
+    { img: './src/images/gallery/013730AF-6DD7-4135-838B-A32866678E67.jpeg', id: '1g'},
     { img: '/src/images/gallery/1A3DBF54-59F1-4138-80AF-B7539D67B197.jpeg', id: '2g'},
     { img: '/src/images/gallery/32BC3549-DE21-4084-9B91-C8B2346EE201.jpeg', id: '3g'},
     { img: '/src/images/gallery/4297A444-820E-47AD-A115-BECFD73FEEC6.jpeg', id: '4g'},
