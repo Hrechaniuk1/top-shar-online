@@ -1,0 +1,103 @@
+.container {
+    padding: 15px;
+    background-color: #9b75cc;
+    color: white;
+}
+
+.smTitle {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.iconList{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.icon {
+    width: 30px;
+    transition: all 250ms ease-in-out;
+}
+
+.icon:hover {
+    scale: 1.2;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.callBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 250ms ease-in-out;
+    height: 20px;
+}
+
+.callBtn:hover {
+    border-color: rgb(8, 6, 6);
+    color: rgb(8, 6, 6);
+}
+
+@media screen and (min-width: 768px) {
+    .linksContainer {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .smLinksContainer {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+    .callBtn {
+        margin: 0;
+    }
+ }
+
+ @media screen and (min-width: 968px) {
+    .linksContainer {
+        gap: 70px;
+    }
+
+    .smLinksContainer {
+        gap: 60px;
+    }
+    .container {
+        padding: 30px;
+    }
+    .title {
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+    .smTitle {
+        font-size: 24px;
+    }
+    .iconList{
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+    
+    .icon {
+        width: 50px;
+    }
+    .callBtn {
+        font-size: 18px;
+        padding: 13px;
+        width: 140px;
+        height: 30px;
+    }
+ }

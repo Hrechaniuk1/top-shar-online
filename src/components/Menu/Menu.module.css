@@ -1,0 +1,33 @@
+
+
+.header {
+    background-color: #9b75cc;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+}
+
+.list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 20px;
+    color: white;
+
+}
+
+@media screen and (min-width: 675px) {
+    .list {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        font-size: 28px;
+        color: white;
+    
+    }
+}

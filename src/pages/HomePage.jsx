@@ -1,6 +1,11 @@
+import Gallery from "../components/Gallery/Gallery"
+
 export default function HomePage() {
 
     return (
-        <div>Home Page</div>
+        <div>
+            <Gallery></Gallery>
+        </div>
+
     )
 }

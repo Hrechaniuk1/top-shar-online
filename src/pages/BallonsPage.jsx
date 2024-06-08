@@ -1,6 +1,10 @@
+import BallonList from "../components/BallonsList/BallonsList"
+
 export default function BalloonsPage() {
 
     return (
-        <div>Balloons Page</div>
+        <div>
+            <BallonList></BallonList>
+        </div>
     )
 }
