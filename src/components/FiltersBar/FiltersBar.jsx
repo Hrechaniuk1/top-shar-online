@@ -1,25 +1,26 @@
 import { Form, Formik, Field } from "formik"
 
 
-export default function FiltersBar({submitHandler}) {
+export default function FiltersBar({submitHandler, initial}) {
 
     function onSubmit(values) {
         submitHandler(values)
-        // console.log(values)
     }
+
+
 
     return (
         <Formik
       initialValues={{
-        feature: '',
-        price: '',
+        future: initial.future,
+        price: initial.price,
       }}
       onSubmit={onSubmit}
     >
         <Form>
           <div>
-            <label htmlFor="feature">Для кого кульки</label>
-            <Field as="select" name="feature" id="feature">
+            <label htmlFor="future">Для кого кульки</label>
+            <Field as="select" name="future" id="feature">
               <option value="" label="..." />
               <option value="man" label="Чоловіку" />
               <option value="girl" label="Дівчині" />
