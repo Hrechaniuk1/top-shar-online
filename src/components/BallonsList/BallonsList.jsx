@@ -1,8 +1,7 @@
 import BalloonCard from "../BallonCard/BallonCard";
-import balloons from "../../data/data";
 import css from './BallonsList.module.css'
 
-export default function BallonList() {
+export default function BallonList({balloons}) {
     return (
         <ul className={css.list}>
             {balloons.map(item => {
