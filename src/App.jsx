@@ -23,6 +23,7 @@ export default function App() {
           <Route path='/' element={<HomePage></HomePage>}></Route>
           <Route path='/balloons' element={<BalloonsPage></BalloonsPage>}></Route>
           <Route path='/contacts' element={<ContactsPage></ContactsPage>}></Route>
+          <Route path='*' element={<div><p>Oops</p></div>}></Route>
         </Routes>
       </Suspense>
       <Footer></Footer>
