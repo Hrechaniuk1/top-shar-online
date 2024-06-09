@@ -10,44 +10,47 @@ export default function BalloonsPage() {
     const futureParam = searchParams.get('future')
 
     function onsubmit(data) {
-        setFilters(data)
         const params = {}
         if(data.price !== '') params.price = data.price
         if(data.future !== '') params.future = data.future
         setSearchParams(params)
     }
 
-    const [sets, setSets] = useState(balloons)
-    const [filters, setFilters] = useState(() => { 
-        const initial = {}
-        if(priceParam) initial.price = priceParam
-        if(futureParam) initial.future = futureParam
+    function onClick() {
+        setFilters({
+            future: '',
+            price: ''
+        })
+        setSearchParams()
+    }
 
-        if(initial.price || initial.future) {return {future: initial.future, price: initial.price}} else {
-            return  {
-                future: '',
-                price: '',
-              }
-        }})
+    const [sets, setSets] = useState(balloons)
+    const [filters, setFilters] = useState({
+        future: '',
+        price: ''
+    })
 
     useEffect(() => {
         let filterByFeature = balloons
-        if(filters.future) {
-            filterByFeature = balloons.filter(curr => curr.future === filters.future)
+        if(futureParam) {
+            filterByFeature = balloons.filter(curr => curr.future === futureParam)
+            setSets(filterByFeature)
         }
-        if(filters.price === '') {setSets(filterByFeature)} else if (filters.price === 'cheap') {
-           const result = filterByFeature.toSorted((a,b) => a.price - b.price)
-            setSets(result)
-        } else if (filters.price === 'expensive') {
-           const result = filterByFeature.toSorted((a,b) => b.price - a.price)
-            setSets(result)
+        if(priceParam) {
+            if(priceParam === 'cheap') {
+                filterByFeature = filterByFeature.toSorted((a,b) => a.price - b.price)
+             } else if (priceParam === 'expensive') {
+                filterByFeature = filterByFeature.toSorted((a,b) => b.price - a.price)
+             }
         }
+        setSets(filterByFeature)
+        setFilters({future: futureParam ? futureParam : '', price: priceParam ? priceParam : ''})
         
-    }, [filters])
+    }, [priceParam, futureParam])
 
     return (
         <div>
-            <FiltersBar submitHandler={onsubmit} initial={filters}></FiltersBar>
+            <FiltersBar submitHandler={onsubmit} initial={filters} clickHandler={onClick}></FiltersBar>
             <BallonList balloons={sets}></BallonList>
         </div>
     )
