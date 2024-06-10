@@ -1,0 +1,24 @@
+.container {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #9b75cc, #ffffff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    font-family: Arial, sans-serif;
+}
+
+.text {
+    text-align: center;
+    color: white;
+    font-weight: 900;
+}
+
+@media screen and (min-width: 900px) {
+    .text {
+        font-size: 59px;
+    }
+}

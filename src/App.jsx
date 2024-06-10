@@ -6,6 +6,7 @@ import { useLocation } from "react-router-dom";
 import Menu from "./components/Menu/Menu";
 import Footer from "./components/Footer/Footer";
 import HomeHead from "./components/HomeHead/HomeHead";
+import NotFound from "./components/Loading/NotFound";
 const HomePage = lazy(() => import('./pages/HomePage'))
 const BalloonsPage = lazy(() => import('./pages/BallonsPage'))
 const ContactsPage = lazy(() => import('./pages/ContactsPage'))
@@ -23,7 +24,7 @@ export default function App() {
           <Route path='/' element={<HomePage></HomePage>}></Route>
           <Route path='/balloons' element={<BalloonsPage></BalloonsPage>}></Route>
           <Route path='/contacts' element={<ContactsPage></ContactsPage>}></Route>
-          <Route path='*' element={<div><p>Oops</p></div>}></Route>
+          <Route path='*' element={<NotFound></NotFound>}></Route>
         </Routes>
       </Suspense>
       <Footer></Footer>

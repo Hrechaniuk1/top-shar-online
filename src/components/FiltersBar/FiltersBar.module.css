@@ -11,12 +11,21 @@
     transition: all 250ms ease-in-out;
 }
 
+.hiddenContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
 .hidden {
     transform: translate(100%, -100%);
     opacity: 0;
     position: absolute;
     pointer-events: none;
 }
+
+
 
 .future, .price {
     display: flex;

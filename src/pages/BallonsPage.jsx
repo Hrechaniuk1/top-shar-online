@@ -2,12 +2,20 @@ import { useEffect, useState } from "react";
 import BallonList from "../components/BallonsList/BallonsList"
 import FiltersBar from "../components/FiltersBar/FiltersBar"
 import balloons from "../data/data";
+import ModalOrder from "../components/Modal/Modal";
 import { useSearchParams } from "react-router-dom";
 
 export default function BalloonsPage() {
     const [searchParams, setSearchParams] = useSearchParams()
     const priceParam = searchParams.get('price')
     const futureParam = searchParams.get('future')
+    const [isOpen, setIsOpen] = useState(false)
+    const [orderId, setOrderId] = useState()
+
+    function onOrderOpenModal(id) {
+        setIsOpen(true)
+        setOrderId(id)
+    }
 
     function onsubmit(data) {
         const params = {}
@@ -51,7 +59,8 @@ export default function BalloonsPage() {
     return (
         <div>
             <FiltersBar submitHandler={onsubmit} initial={filters} clickHandler={onClick}></FiltersBar>
-            <BallonList balloons={sets}></BallonList>
+            <BallonList balloons={sets} onOrder={onOrderOpenModal}></BallonList>
+            {isOpen ? <ModalOrder isOpen={isOpen} onClose={setIsOpen} orderId={orderId}></ModalOrder> : <></>}
         </div>
     )
 }

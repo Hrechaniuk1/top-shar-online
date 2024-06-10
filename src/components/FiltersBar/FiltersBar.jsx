@@ -31,7 +31,7 @@ export default function FiltersBar({submitHandler, initial, clickHandler}) {
     }
 
     return (
-      <div>
+      <div className={css.hiddenContainer}>
          <button className={css.showFilters} onClick={onShowFilter}>Фільтри</button>
       
               <Formik
