@@ -2,14 +2,18 @@ import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
+// ------------------------------------------------
 
 import Menu from "./components/Menu/Menu";
 import Footer from "./components/Footer/Footer";
 import HomeHead from "./components/HomeHead/HomeHead";
-import NotFound from "./components/Loading/NotFound";
+import NotFound from "./components/NotFound/NotFound";
+import Loading from "./components/Loading/Loading";
 const HomePage = lazy(() => import('./pages/HomePage'))
 const BalloonsPage = lazy(() => import('./pages/BallonsPage'))
 const ContactsPage = lazy(() => import('./pages/ContactsPage'))
+
+// ------------------------------------------------
 
 export default function App() {
 
@@ -19,7 +23,7 @@ export default function App() {
     <div>
       {location.pathname === '/' ? <HomeHead></HomeHead> : <></>}
       <Menu></Menu>
-      <Suspense>
+      <Suspense fallback={<Loading></Loading>}>
         <Routes>
           <Route path='/' element={<HomePage></HomePage>}></Route>
           <Route path='/balloons' element={<BalloonsPage></BalloonsPage>}></Route>

@@ -10,6 +10,11 @@
 
 .logo {
     width: 50px;
+    transition: scale 350ms ease-in-out;
+}
+
+.logo:hover {
+   scale: 1.1;
 }
 
 .list {
@@ -18,7 +23,13 @@
     gap: 20px;
     font-size: 20px;
     color: white;
+    transition: text-shadow 350ms ease-in-out;
 
+}
+
+.list a:hover{ 
+    text-shadow: 0 0 10px antiquewhite;
+    
 }
 
 @media screen and (min-width: 675px) {

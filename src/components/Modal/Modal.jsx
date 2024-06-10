@@ -1,10 +1,14 @@
 import Modal from 'react-modal';
-import css from './Modal.module.css'
-import { Formik, Field, Form } from 'formik';
-
-import data from '../../data/data'
 import { useState } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
+import { Formik, Field, Form } from 'formik';
+
+// ------------------------------------------
+
+import css from './Modal.module.css'
+import data from '../../data/data'
+
+// ------------------------------------------
 
 const customStyles = {
     overlay: {
@@ -15,19 +19,6 @@ const customStyles = {
       bottom: 0,
       backgroundColor: 'rgba(0, 0, 0, 0.8)'
     },
-  content: {
-    top: '30%',
-        left: '50%',
-        transform: 'translate(-50%, -40%)',
-      padding: '20px',
-    minWidth: '300px',
-    maxWidth: '900px',
-      height: 'auto',
-      overflow: 'hidden',
-      overflowY: 'scroll',
-      backgroundColor: 'white',
-      borderColor: 'transparent',
-  },
 };
 
 
@@ -45,6 +36,7 @@ export default function ModalOrder({isOpen, onClose, orderId,}) {
         address: '',
         time: ''
     }
+    
     function onSubmit(values) {
         console.log([values, orderedSet])
         setOrderDone(nanoid())
@@ -56,6 +48,7 @@ export default function ModalOrder({isOpen, onClose, orderId,}) {
         isOpen={isOpen}
         style={customStyles}
         onRequestClose={() => onClose(false)}
+        className={css.modal}
         >
             <button className={css.btnClose} onClick={() => onClose(false)} type='button'>Закрити</button>
             {orderDone === '' ? (<div className={css.box}>

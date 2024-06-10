@@ -8,7 +8,7 @@ export default function Menu() {
         <div className={css.header}>
             <Link to='/'><img className={css.logo} src={logo} /></Link>
             <div className={css.list}>
-            <Link to='/balloons' >Кульки</Link>
+            <Link to='/balloons' >Каталог кульок</Link>
             <Link to='/contacts' >Контакти</Link>
             </div>
         </div>

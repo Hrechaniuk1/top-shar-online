@@ -11,20 +11,25 @@ export default function BalloonsPage() {
     const futureParam = searchParams.get('future')
     const [isOpen, setIsOpen] = useState(false)
     const [orderId, setOrderId] = useState()
+    const [sets, setSets] = useState(balloons)
+    const [filters, setFilters] = useState({
+        future: '',
+        price: ''
+    })
 
     function onOrderOpenModal(id) {
         setIsOpen(true)
         setOrderId(id)
     }
 
-    function onsubmit(data) {
+    function onFilterSubmit(data) {
         const params = {}
         if(data.price !== '') params.price = data.price
         if(data.future !== '') params.future = data.future
         setSearchParams(params)
     }
 
-    function onClick() {
+    function onFilterReset() {
         setFilters({
             future: '',
             price: ''
@@ -32,11 +37,6 @@ export default function BalloonsPage() {
         setSearchParams()
     }
 
-    const [sets, setSets] = useState(balloons)
-    const [filters, setFilters] = useState({
-        future: '',
-        price: ''
-    })
 
     useEffect(() => {
         let filterByFeature = balloons
@@ -58,7 +58,7 @@ export default function BalloonsPage() {
 
     return (
         <div>
-            <FiltersBar submitHandler={onsubmit} initial={filters} clickHandler={onClick}></FiltersBar>
+            <FiltersBar submitHandler={onFilterSubmit} initial={filters} clickHandler={onFilterReset}></FiltersBar>
             <BallonList balloons={sets} onOrder={onOrderOpenModal}></BallonList>
             {isOpen ? <ModalOrder isOpen={isOpen} onClose={setIsOpen} orderId={orderId}></ModalOrder> : <></>}
         </div>

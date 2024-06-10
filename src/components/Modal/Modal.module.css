@@ -74,6 +74,25 @@
     font-size: 12px;
 }
 
+.form button:hover {
+    background-color: blueviolet;
+}
+
+.modal {
+    background-color: #ffffff;
+    position: absolute;
+    border-color: transparent;
+    overflow: hidden;
+    overflow-y: auto;
+    height: auto;
+    max-width: 900px;
+    min-width: 300px;
+    padding: 20px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+}
+
 @media screen and (min-width: 900px) {
     .box {
         display: flex;

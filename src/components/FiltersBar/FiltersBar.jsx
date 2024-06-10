@@ -1,11 +1,15 @@
 import { Form, Formik, Field, useFormikContext } from "formik"
 import { useEffect, useState } from "react"
 import clsx from "clsx";
+// ----------------------------------------------
 
 import css from './FiltersBar.module.css'
 
+// ----------------------------------------------
 
 export default function FiltersBar({submitHandler, initial, clickHandler}) {
+
+  const [isOpen, setIsOpen] = useState(false)
 
     function SyncFormikWithInitialValues({ initial }) {
       const { setValues } = useFormikContext();
@@ -24,15 +28,9 @@ export default function FiltersBar({submitHandler, initial, clickHandler}) {
         submitHandler(values)
     }
 
-    const [isOpen, setIsOpen] = useState(false)
-
-    function onShowFilter() {
-      setIsOpen(!isOpen)
-    }
-
     return (
       <div className={css.hiddenContainer}>
-         <button className={css.showFilters} onClick={onShowFilter}>Фільтри</button>
+         <button className={css.showFilters} onClick={() => setIsOpen(!isOpen)}>Фільтри</button>
       
               <Formik
       onSubmit={onSubmit}
