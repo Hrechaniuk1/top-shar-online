@@ -1,0 +1,45 @@
+.up {
+    width: 60px;
+    height: 60px;
+    border: 1px solid purple;
+    outline: transparent;
+    background-color: #9b75cc;
+    color: white;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    animation: pulse 2s infinite alternate, scaleUpDown 2s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    50% {
+      box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+  }
+  
+  @keyframes scaleUpDown {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+@media screen and (min-width: 700px) {
+    .up {
+        width: 80px;
+        height: 80px;
+    }
+}
+

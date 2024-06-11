@@ -2,8 +2,8 @@
     background-image: url(../../images//gallery//897082E5-E247-4DF7-8CCF-45C897F8175D.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 50%;
-    height: 200px;
+    padding-top: 30%;
+    height: 150px;
 }
 
 .title {
@@ -39,7 +39,7 @@
     .container {
         background-position: 0px 20%;
         height: 300px;
-        padding-top: 10%;
+        padding-top: 20%;
     }
     .title {
         font-size: 76px;
