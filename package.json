@@ -22,7 +22,8 @@
     "react-router-dom": "^6.23.1",
     "redux-persist": "^6.0.0",
     "vite-plugin-pages": "^0.32.2",
-    "vite-plugin-react-pages": "^5.0.0"
+    "vite-plugin-react-pages": "^5.0.0",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

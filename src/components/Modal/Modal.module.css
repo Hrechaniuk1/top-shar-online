@@ -93,6 +93,13 @@
     transform: translate(-50%, -40%);
 }
 
+.error {
+    border-radius: 10%;
+    padding: 5px;
+    background-color: rgba(255, 0, 0, 0.5);
+    font-size: 14px;
+}
+
 @media screen and (min-width: 900px) {
     .box {
         display: flex;
