@@ -2,6 +2,8 @@
     padding: 15px;
     background-color: #9b75cc;
     color: white;
+    position: relative;
+    bottom: 0;
 }
 
 .smTitle {
@@ -38,7 +40,7 @@
     padding: 10px;
     border: 1px solid white;
     border-radius: 5px;
-    width: 100px;
+    width: 110px;
     margin-left: auto;
     margin-right: auto;
     transition: all 250ms ease-in-out;
@@ -65,6 +67,7 @@
     }
     .callBtn {
         margin: 0;
+        width: 120px;
     }
  }
 

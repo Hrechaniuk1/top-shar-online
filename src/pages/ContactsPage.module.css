@@ -4,7 +4,8 @@
     flex-direction: column;
     gap: 20px;
     align-items: center;
-    padding-bottom: 100px;
+    padding-bottom: 500px;
+    height: 100%;
 }
 
 .title {
@@ -34,7 +35,7 @@
     .container {
         padding: 30px;
         gap: 40px;
-        padding-bottom: 150px;
+        padding-bottom: 600px;
     }
     
     .title {
@@ -46,7 +47,7 @@
     .btn {
         font-size: 20px;
         padding: 10px;
-        width: 120px;
+        width: 140px;
         height: 20px;
     }
  }
@@ -55,7 +56,7 @@
     .container {
         padding: 50px;
         gap: 40px;
-        padding-bottom: 250px;
+        padding-bottom: 700px;
     }
     
     .title {
@@ -67,14 +68,14 @@
     .btn {
         font-size: 24px;
         padding: 15px;
-        width: 140px;
+        width: 180px;
         height: 30px;
     }
  }
 
  @media screen and (min-width: 1200px) {
     .container {
-        padding-bottom: 320px;
+        padding-bottom: 850px;
     }
  }
 

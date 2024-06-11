@@ -1,10 +1,9 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense} from "react";
 import { Routes, Route } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 // ------------------------------------------------
 
-import css from './App.module.css'
 import Menu from "./components/Menu/Menu";
 import Footer from "./components/Footer/Footer";
 import HomeHead from "./components/HomeHead/HomeHead";
@@ -20,9 +19,8 @@ const ContactsPage = lazy(() => import('./pages/ContactsPage'))
 export default function App() {
 
   const location = useLocation()
-
   return (
-    <div className={css.app}>
+    <div>
       {location.pathname === '/' ? <HomeHead></HomeHead> : <></>}
       <Menu></Menu>
       <Suspense fallback={<Loading></Loading>}>
