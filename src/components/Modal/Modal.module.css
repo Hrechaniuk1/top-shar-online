@@ -84,11 +84,11 @@
     border-color: transparent;
     overflow: hidden;
     overflow-y: auto;
-    height: 80%;
+    height: 60%;
     max-width: 900px;
     min-width: 300px;
     padding: 20px;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -40%);
 }
