@@ -7,7 +7,6 @@ import * as Yup from 'yup'
 // ------------------------------------------
 
 import css from './Modal.module.css'
-import data from '../../data/data'
 
 // ------------------------------------------
 
