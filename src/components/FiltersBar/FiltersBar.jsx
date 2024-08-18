@@ -16,7 +16,7 @@ export default function FiltersBar({submitHandler, initial, clickHandler}) {
     
       useEffect(() => {
         setValues({
-          future: initial.future,
+          category: initial.category,
           price: initial.price,
         });
       }, [initial, setValues]);
@@ -26,6 +26,7 @@ export default function FiltersBar({submitHandler, initial, clickHandler}) {
 
     function onSubmit(values) {
         submitHandler(values)
+        console.log(values)
     }
 
     return (
@@ -39,13 +40,14 @@ export default function FiltersBar({submitHandler, initial, clickHandler}) {
         <Form className={clsx(css.container, {[css.hidden]: !isOpen})}>
           <SyncFormikWithInitialValues initial={initial} />
           <div className={css.future}>
-            <label htmlFor="future">Для кого кульки</label>
-            <Field className={css.select} as="select" name="future" id="future">
+            <label htmlFor="category">Для кого кульки</label>
+            <Field className={css.select} as="select" name="category" id="category">
               <option value="" label="..." />
               <option value="man" label="Чоловіку" />
               <option value="girl" label="Дівчині" />
-              <option value="kids" label="Дітям" />
+              <option value="children" label="Дітям" />
               <option value="numbers" label="Цифри" />
+              <option value="babyborn" label="Виписка" />
             </Field>
           </div>
           <div className={css.price}>

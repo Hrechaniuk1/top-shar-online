@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
 import BallonList from "../components/BallonsList/BallonsList"
 import FiltersBar from "../components/FiltersBar/FiltersBar"
-import balloons from "../data/data";
 import ModalOrder from "../components/Modal/Modal";
 import { useSearchParams } from "react-router-dom";
+import axios from "axios";
 
 export default function BalloonsPage() {
     const [searchParams, setSearchParams] = useSearchParams()
     const priceParam = searchParams.get('price')
-    const futureParam = searchParams.get('future')
+    const futureParam = searchParams.get('category')
     const [isOpen, setIsOpen] = useState(false)
     const [orderId, setOrderId] = useState()
-    const [sets, setSets] = useState(balloons)
+    const [sets, setSets] = useState({})
     const [filters, setFilters] = useState({
-        future: '',
+        category: '',
         price: ''
     })
 
@@ -25,41 +25,36 @@ export default function BalloonsPage() {
     function onFilterSubmit(data) {
         const params = {}
         if(data.price !== '') params.price = data.price
-        if(data.future !== '') params.future = data.future
+        if(data.category !== '') params.category = data.category
         setSearchParams(params)
     }
 
     function onFilterReset() {
         setFilters({
-            future: '',
+            category: '',
             price: ''
         })
         setSearchParams()
     }
 
-
     useEffect(() => {
-        let filterByFeature = balloons
-        if(futureParam) {
-            filterByFeature = balloons.filter(curr => curr.future === futureParam)
-            setSets(filterByFeature)
+        async function getBalloons() {
+            try {
+                const balloonsData = await axios.get('https://top-shar-online-server.onrender.com/balloons')
+            setSets(balloonsData.data.data)
+            } catch (err) {
+                console.log(err)
+            }
         }
-        if(priceParam) {
-            if(priceParam === 'cheap') {
-                filterByFeature = filterByFeature.toSorted((a,b) => a.price - b.price)
-             } else if (priceParam === 'expensive') {
-                filterByFeature = filterByFeature.toSorted((a,b) => b.price - a.price)
-             }
-        }
-        setSets(filterByFeature)
-        setFilters({future: futureParam ? futureParam : '', price: priceParam ? priceParam : ''})
-        
-    }, [priceParam, futureParam])
+        getBalloons()
+       
+
+    }, [])
 
     return (
         <div>
             <FiltersBar submitHandler={onFilterSubmit} initial={filters} clickHandler={onFilterReset}></FiltersBar>
-            <BallonList balloons={sets} onOrder={onOrderOpenModal}></BallonList>
+            {sets.data ? <BallonList balloons={sets.data} onOrder={onOrderOpenModal}></BallonList> : <></>}
             {isOpen ? <ModalOrder isOpen={isOpen} onClose={setIsOpen} orderId={orderId}></ModalOrder> : <></>}
         </div>
     )
