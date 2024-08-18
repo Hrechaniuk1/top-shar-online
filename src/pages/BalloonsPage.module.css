@@ -1,0 +1,25 @@
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    color: white;
+    background-color: #9b75cc;
+    border: 1px solid transparent;
+    outline: transparent;
+    border-radius: 5px;
+    width: 100px;
+    transition: all 250ms ease-in-out;
+}
+
+.btn:hover {
+    scale: 1.1;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}

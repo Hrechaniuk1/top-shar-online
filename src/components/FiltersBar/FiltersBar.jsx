@@ -17,7 +17,7 @@ export default function FiltersBar({submitHandler, initial, clickHandler}) {
       useEffect(() => {
         setValues({
           category: initial.category,
-          price: initial.price,
+          sortOrder: initial.sortOrder,
         });
       }, [initial, setValues]);
     
@@ -51,11 +51,11 @@ export default function FiltersBar({submitHandler, initial, clickHandler}) {
             </Field>
           </div>
           <div className={css.price}>
-            <label htmlFor="price">Сортування за ціною</label>
-            <Field className={css.select} as="select" name="price" id="price">
+            <label htmlFor="sortOrder">Сортування за ціною</label>
+            <Field className={css.select} as="select" name="sortOrder" id="sortOrder">
               <option value="" label="..." />
-              <option value="cheap" label="За зростанням" />
-              <option value="expensive" label="За спаданням" />
+              <option value="asc" label="За зростанням" />
+              <option value="desc" label="За спаданням" />
             </Field>
           </div>
           <button className={css.btn} type="submit">Фільтрувати</button>
