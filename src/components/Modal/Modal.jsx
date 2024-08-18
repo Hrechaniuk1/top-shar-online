@@ -25,11 +25,11 @@ const customStyles = {
 
 Modal.setAppElement('#root');
 
-export default function ModalOrder({isOpen, onClose, orderId,}) {
+export default function ModalOrder({isOpen, onClose, order,}) {
 
     const [orderDone, setOrderDone] = useState('')
 
-    const orderedSet = data.find(curr => curr.id === orderId)
+    // const orderedSet = data.find(curr => curr.id === orderId)
     const initial = {
         name: '',
         number: '',
@@ -75,8 +75,8 @@ export default function ModalOrder({isOpen, onClose, orderId,}) {
             {orderDone === '' ? (<div className={css.box}>
             <div className={css.yourOrder}>
                 <p>Ваше замовлення</p>
-                <p>Сет №{orderedSet.number} - {orderedSet.price} грн</p>
-                <img src={orderedSet.img} alt="img" />
+                <p>Сет №{order.number} - {order.price} грн</p>
+                <img src={order.image} alt="img" />
             </div>
             <Formik
             initialValues={initial}

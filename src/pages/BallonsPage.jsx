@@ -11,7 +11,7 @@ export default function BalloonsPage() {
     const categoryParam = searchParams.get('category');
     const sortOrderParam = searchParams.get('sortOrder')
     const [isOpen, setIsOpen] = useState(false)
-    const [orderId, setOrderId] = useState()
+    const [orderInfo, setOrderInfo] = useState()
     const [sets, setSets] = useState([])
     const [page, setPage] = useState(1)
     const [pages, setPages] = useState({nextPage: false, prevPage: false})
@@ -22,7 +22,7 @@ export default function BalloonsPage() {
 
     function onOrderOpenModal(id) {
         setIsOpen(true)
-        setOrderId(id)
+        setOrderInfo(id) 
     }
 
     function onFilterSubmit(data) {
@@ -80,7 +80,7 @@ export default function BalloonsPage() {
         <div>
             <FiltersBar submitHandler={onFilterSubmit} initial={filters} clickHandler={onFilterReset}></FiltersBar>
             {sets.length !==0 ? <BallonList balloons={sets} onOrder={onOrderOpenModal}></BallonList> : <></>}
-            {isOpen ? <ModalOrder isOpen={isOpen} onClose={setIsOpen} orderId={orderId}></ModalOrder> : <></>}
+            {isOpen ? <ModalOrder isOpen={isOpen} onClose={setIsOpen} order={orderInfo}></ModalOrder> : <></>}
             <div className={css.box}>
             {pages.nextPage ? <button className={css.btn} onClick={() => showNextHandler()} >Наступна</button> : <></>}
             {pages.prevPage ? <button className={css.btn} onClick={() => showPrevHandler()} >Попередня</button> : <></>}
