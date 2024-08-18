@@ -12,12 +12,12 @@ export default function Footer() {
             <div className={css.smLinksContainer}>
                 <p className={css.smTitle}>Соціальні мережі</p>
                 <ul className={css.iconList}>
-                    <li><a className={css.link} href='tel:+380973351065' target="_blank"><img className={css.icon} src={telegram} alt="tele" /></a></li>
-                    <li><a className={css.link} href='viber://add?number=380973351065' target="_blank"><img className={css.icon} src={viber} alt="viber" /></a></li>
-                    <li><a className={css.link} href='https://www.instagram.com/toptop_shar/' target="_blank"><img className={css.icon} src={insta} alt="insta" /></a></li>
+                    <li><a className={css.link} href='tel:+380970000000' target="_blank"><img className={css.icon} src={telegram} alt="tele" /></a></li>
+                    <li><a className={css.link} href='viber://add?number=38000000000' target="_blank"><img className={css.icon} src={viber} alt="viber" /></a></li>
+                    <li><a className={css.link} href='https://www.instagram.com/no_page/' target="_blank"><img className={css.icon} src={insta} alt="insta" /></a></li>
                 </ul>
             </div>
-            <a className={css.callBtn} href='tel:+380973351065'>Зателефонувати</a>
+            <a className={css.callBtn} href='tel:+380970000000'>Зателефонувати</a>
             </div>
         </div>
     )
