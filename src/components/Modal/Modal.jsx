@@ -59,7 +59,7 @@ export default function ModalOrder({isOpen, onClose, order,}) {
     
     
     function onSubmit(values) {
-        console.log([values, orderedSet])
+        console.log([values, order])
         setOrderDone(nanoid())
         
     }
