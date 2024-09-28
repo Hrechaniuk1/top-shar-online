@@ -18,5 +18,5 @@
    npm install
 6. Запусти сервер
    ```bash
-   npm start
+   npm run dev
 
