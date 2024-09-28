@@ -9,7 +9,7 @@
 ## Запуск проекту
 1. Клонуй репозиторій:
    ```bash
-   git clone https://github.com/your-username/todo-app.git
+   git clone https://github.com/Hrechaniuk1/top-shar-online
 2. Перейди на сторінку проекту
    ```bash
    cd contacts-app-server
