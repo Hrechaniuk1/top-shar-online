@@ -1,8 +1,22 @@
-# React + Vite
+# Balloon shop online
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Це простий сайт для перегляду колекції наборі куль. Має головну сторінку з галереєю та сторніку з наборами, де можна фільтрувати та сортувати кулі. Надає можливсть зробити замовлення набору.
 
-Currently, two official plugins are available:
+## Технології
+- JavaScript (ES6+)
+- React
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Запуск проекту
+1. Клонуй репозиторій:
+   ```bash
+   git clone https://github.com/your-username/todo-app.git
+2. Перейди на сторінку проекту
+   ```bash
+   cd contacts-app-server
+4. Встанови залежості
+   ```bash
+   npm install
+6. Запусти сервер
+   ```bash
+   npm start
+
